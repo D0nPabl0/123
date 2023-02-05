@@ -1,14 +1,26 @@
-﻿//Задача 15: Напишите программу, которая принимает на вход цифру, 
-//обозначающую день недели, и проверяет, является ли этот день выходным.
-//6 -> да 7 -> да 1 -> нет
-Console.Clear();
-int num;
-Console.Write("Vvedite nomer dnya nedeli: ");
-num = Convert.ToInt32(Console.ReadLine());
-if (num >= 1 && num <= 7)
-{
-    if (num == 6 | num == 7) Console.WriteLine("Segodnya vihodnoy");
-    else Console.WriteLine("Segodnya rabochiy den");
-}
-else Console.WriteLine("Ne vernoe chislo");
-return;
+﻿// Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
+
+// 645 -> 5
+
+// 78 -> третьей цифры нет
+
+// 32679 -> 6
+int ThirdDigit(int number)
+        {
+            int result = -1;
+            if (number >= 100)
+            {
+                while (number > 999)
+                {
+                    number = number / 10;
+                }
+                result = number % 10;
+            }
+            return result; 
+        }
+Console.Write("Vvedite chislo: ");
+int number1 = Convert.ToInt32(Console.ReadLine());
+if (ThirdDigit(number1) == -1)
+Console.WriteLine("tretiei cifri net");
+else
+Console.WriteLine($"Tretia cifra: {ThirdDigit(number1)}");
