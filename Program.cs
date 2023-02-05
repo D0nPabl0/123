@@ -1,26 +1,12 @@
-﻿// Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
-
-// 645 -> 5
-
-// 78 -> третьей цифры нет
-
-// 32679 -> 6
-int ThirdDigit(int number)
-        {
-            int result = -1;
-            if (number >= 100)
-            {
-                while (number > 999)
-                {
-                    number = number / 10;
-                }
-                result = number % 10;
-            }
-            return result; 
-        }
-Console.Write("Vvedite chislo: ");
-int number1 = Convert.ToInt32(Console.ReadLine());
-if (ThirdDigit(number1) == -1)
-Console.WriteLine("tretiei cifri net");
-else
-Console.WriteLine($"Tretia cifra: {ThirdDigit(number1)}");
+//Задача 10: Напишите программу, которая принимает на вход 
+//трёхзначное число и на выходе показывает вторую цифру этого числа.
+Console.Clear();
+Console.Write("Vvedite trehznachnoe chislo: ");
+int num = int.Parse(Console.ReadLine());
+if (num < 100 || num > 999){
+    Console.WriteLine("Vvedeno nepravilnoe chislo");
+    return;
+    }
+    int otvet = num / 10 % 10;
+    Console.WriteLine($"2 cifra: {otvet}");
+    
